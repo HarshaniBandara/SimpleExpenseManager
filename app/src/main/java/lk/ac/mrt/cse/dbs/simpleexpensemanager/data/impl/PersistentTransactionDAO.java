@@ -32,7 +32,7 @@ public class PersistentTransactionDAO extends DataBase implements TransactionDAO
 
         long insert=db.insert(TRANSACTION_TABLE, null,cv);
 
-        db.close();
+        //db.close();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class PersistentTransactionDAO extends DataBase implements TransactionDAO
 
         }
         cursor.close();
-        db.close();
+       // db.close();
         return AllTransactionList;
     }
 
@@ -103,7 +103,7 @@ public class PersistentTransactionDAO extends DataBase implements TransactionDAO
 
         }
         cursor.close();
-        db.close();
+        //db.close();
         return AllTransactionList;
     }
 }

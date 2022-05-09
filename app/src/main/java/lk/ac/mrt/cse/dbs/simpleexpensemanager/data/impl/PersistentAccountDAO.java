@@ -79,7 +79,7 @@ public class PersistentAccountDAO extends DataBase implements AccountDAO {
             account = null;
         }
 
-        db.close();
+        //2db.close();
         return account;
 
     }
@@ -95,7 +95,7 @@ public class PersistentAccountDAO extends DataBase implements AccountDAO {
 
         long insert=db.insert(ACCOUNT_TABLE, null,cv);
 
-        db.close();
+        //db.close();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class PersistentAccountDAO extends DataBase implements AccountDAO {
         SQLiteDatabase db=this.getWritableDatabase();
         String queryString="DELETE FROM Account_Table WHERE Account_ID=" + "=\"" + accountNo +"\";";
         db.rawQuery(queryString,null);
-        db.close();
+        //db.close();
     }
 
     @Override
@@ -126,6 +126,6 @@ public class PersistentAccountDAO extends DataBase implements AccountDAO {
         db.execSQL(queryString);
 
 
-        db.close();
+        //db.close();
     }
 }
