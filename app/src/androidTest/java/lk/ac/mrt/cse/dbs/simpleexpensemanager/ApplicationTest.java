@@ -49,7 +49,7 @@ public class ApplicationTest {
         Context context = ApplicationProvider.getApplicationContext();
         expenseManager = new PersistentExpenseManager(context);
     }
-
+    //testing for add account
     @Test
     public void testAddAccount() throws InvalidAccountException {
 
@@ -59,7 +59,7 @@ public class ApplicationTest {
         List<String> accountNumberList = expenseManager.getAccountNumbersList();
         assertTrue(accountNumberList.contains("190088"));
     }
-
+    //testing for expence transaction
     @Test
     public void testAddTransactionExpense() throws ParseException, InvalidAccountException {
         String accountNumber="190089";
@@ -81,6 +81,7 @@ public class ApplicationTest {
 //
 
     }
+    //testing for income transaction
     @Test
     public void testAddTransactionIncome() throws ParseException, InvalidAccountException {
 
