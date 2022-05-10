@@ -97,6 +97,7 @@ public abstract class ExpenseManager implements Serializable {
      *
      * @return
      */
+
     public AccountDAO getAccountsDAO() {
         return accountsHolder;
     }
