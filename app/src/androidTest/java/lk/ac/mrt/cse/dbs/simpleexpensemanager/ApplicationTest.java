@@ -62,8 +62,10 @@ public class ApplicationTest {
 
     @Test
     public void testAddTransactionExpense() throws ParseException, InvalidAccountException {
-        String accountNumber="190088";
+        String accountNumber="190089";
         String expensesAmount="1000.00";
+
+        expenseManager.addAccount(accountNumber,"Pan Asia","Harshani",10000);
 
 
         double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
@@ -83,8 +85,9 @@ public class ApplicationTest {
     public void testAddTransactionIncome() throws ParseException, InvalidAccountException {
 
 
-        String accountNumber="190088";
+        String accountNumber="190090";
         String incomeAmount="1000.00";
+        expenseManager.addAccount(accountNumber,"Pan Asia","Harshani",10000);
 
         double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
         expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.INCOME,
