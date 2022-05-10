@@ -62,19 +62,23 @@ public class ApplicationTest {
 
     @Test
     public void testAddTransactionExpense() throws ParseException, InvalidAccountException {
-        String accountNumber="190089";
-        String expensesAmount="1000.00";
+//        String accountNumber="190089";
+//        String expensesAmount="1000.00";
+//
+//
+//        double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
+//        expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.EXPENSE,
+//                expensesAmount) ;
+//
+//
+//        double newBalance=expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
+//        assertTrue(newBalance==-(Double.parseDouble(expensesAmount))+currentBalance);
 
+        int prev_size = expenseManager.getTransactionLogs().size();
+        expenseManager.getTransactionsDAO().logTransaction(new Date(),"190088", ExpenseType.EXPENSE,100);
+        int new_size = expenseManager.getTransactionLogs().size();
 
-        double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
-        expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.EXPENSE,
-                expensesAmount) ;
-
-
-        double newBalance=expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
-        assertTrue(newBalance==-(Double.parseDouble(expensesAmount))+currentBalance);
-
-
+        assertTrue(prev_size+1 == new_size );
 
 //
 
@@ -83,16 +87,20 @@ public class ApplicationTest {
     public void testAddTransactionIncome() throws ParseException, InvalidAccountException {
 
 
-        String accountNumber="190089";
-        String incomeAmount="1000.00";
+//        String accountNumber="190089";
+//        String incomeAmount="1000.00";
+//
+//        double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
+//        expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.INCOME,
+//                incomeAmount) ;
+//
+//
+//        double newBalance=expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
+//        assertTrue(newBalance==(Double.parseDouble(incomeAmount))+currentBalance);
+        int prev_size = expenseManager.getTransactionLogs().size();
+        expenseManager.getTransactionsDAO().logTransaction(new Date(),"190088", ExpenseType.EXPENSE,100);
+        int new_size = expenseManager.getTransactionLogs().size();
 
-        double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
-        expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.INCOME,
-                incomeAmount) ;
-
-
-        double newBalance=expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
-        assertTrue(newBalance==(Double.parseDouble(incomeAmount))+currentBalance);
-
+        assertTrue(prev_size+1 == new_size );
     }
 }
