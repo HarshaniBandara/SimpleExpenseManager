@@ -77,7 +77,7 @@ public class ApplicationTest {
         assertTrue(newBalance==-(Double.parseDouble(expensesAmount))+currentBalance);
 
 
-
+//
 //
 
     }
