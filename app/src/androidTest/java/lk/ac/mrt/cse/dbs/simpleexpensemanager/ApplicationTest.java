@@ -65,7 +65,7 @@ public class ApplicationTest {
         String accountNumber="190089";
         String expensesAmount="1000.00";
 
-        //expenseManager.addAccount("190089","Pan Asia","Harshani",10000);
+
         double currentBalance = expenseManager.getAccountsDAO().getAccount(accountNumber).getBalance();
         expenseManager.updateAccountBalance(accountNumber,24, 4, 2022, ExpenseType.EXPENSE,
                 expensesAmount) ;
